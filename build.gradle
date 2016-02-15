@@ -1,0 +1,23 @@
+plugins {
+	id 'groovy'
+	id 'application'
+}
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	compile 'com.github.aesteve:grooveex:0.11'
+}
+
+mainClassName = 'io.vertx.core.Launcher'
+def mainVerticle = 'com.github.aesteve.grooveex.todomvc.WebServer'
+
+run {
+	args = ['run', "groovy:$mainVerticle"]
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.11'
+}
