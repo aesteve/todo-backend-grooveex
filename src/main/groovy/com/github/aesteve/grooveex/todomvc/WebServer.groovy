@@ -94,8 +94,6 @@ class WebServer extends GroovyVerticle {
 			fail 400
 			return
 		}
-		println "FIND $id"
-		println todos.find { it.id == id }
 		yield todos.find { it.id == id }
 	}
 
