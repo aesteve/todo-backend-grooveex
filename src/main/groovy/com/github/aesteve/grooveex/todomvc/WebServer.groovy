@@ -1,6 +1,7 @@
 package com.github.aesteve.grooveex.todomvc
 
 import com.github.aesteve.grooveex.todomvc.model.Todo
+import com.github.aesteve.vertx.groovy.builder.RouterBuilder
 import com.github.aesteve.vertx.groovy.io.impl.JacksonMarshaller
 import io.vertx.core.Future
 import io.vertx.groovy.core.http.HttpServer
@@ -25,6 +26,12 @@ class WebServer extends GroovyVerticle {
 	@Override
 	void start(Future<Void> future) {
 		server = vertx.createHttpServer port:PORT, host:HOST
+		/*
+		Binding bindings = new Binding()
+		bindings.setVariable 'todos', todos
+		bindings.setVariable 'sequence', sequence
+		Router router = RouterBuilder.buildRouter(bindings, vertx, this.class.getResourceAsStream('routes.groovy'))
+		*/
 		server.requestHandler router.&accept
 		server.listen future.completer()
 	}
