@@ -4,7 +4,7 @@ import static com.github.aesteve.grooveex.todomvc.WebServer.*
 
 class Todo {
 
-	Integer id
+	String id
 	String title
 	boolean completed
 	Integer order

@@ -4,11 +4,12 @@ plugins {
 }
 
 repositories {
-	jcenter()
+	mavenLocal()
+	mavenCentral()
 }
 
 dependencies {
-	compile 'com.github.aesteve:grooveex:0.12'
+	compile 'com.github.aesteve:grooveex:0.14'
 }
 
 mainClassName = 'io.vertx.core.Launcher'
