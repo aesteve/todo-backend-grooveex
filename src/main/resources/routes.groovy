@@ -34,7 +34,7 @@ router {
 		}
 		delete {
 			todos.remove payload
-			response.noContent
+			response.noContent()
 		}
 	}
 }
